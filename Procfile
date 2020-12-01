@@ -1,2 +1,2 @@
-web: gunicorn dashapp:server
+web: gunicorn dashapp:server --timeout 300
 release:flask db upgrade
