@@ -28,7 +28,6 @@ from flask.helpers import get_root_path
 from flask_login import login_required
 from config import BaseConfig
 from flask_migrate import Migrate
-from urllib.parse import urlencode
 
 def create_app():
     server = Flask(__name__)
