@@ -66,4 +66,4 @@ lxml==4.5.1
 yfinance==0.1.55
 pandas==1.1.2
 pandas-datareader==0.9.0
-simfin==0.8.1
+simfin~=0.8.1
