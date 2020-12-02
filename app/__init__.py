@@ -28,6 +28,7 @@ from flask.helpers import get_root_path
 from flask_login import login_required
 from config import BaseConfig
 from flask_migrate import Migrate
+from urllib.parse import urlencode
 
 try:
     sf.set_data_dir('~/simfin_data/')
