@@ -13,7 +13,7 @@ from textwrap import dedent
 import dash_daq as daq
 import yfinance as yf
 import datetime
-#import pandas_datareader as pdr
+import pandas_datareader as pdr
 from dateutil.relativedelta import relativedelta
 import plotly.express as px
 from scipy.stats import pearsonr
