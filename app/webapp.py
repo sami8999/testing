@@ -53,7 +53,8 @@ def logout():
     logout_user()
 
     #return redirect(url_for('main.index'))
-    return redirect ('https://samis-project.herokuapp.com/login/')
+    #return redirect ('https://samis-project.herokuapp.com/login/')
+    return redirect(url_for('index'))
 
 
 @server_bp.route('/register/', methods=['GET', 'POST'])
