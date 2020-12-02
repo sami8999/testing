@@ -13,7 +13,7 @@ from textwrap import dedent
 import dash_daq as daq
 import yfinance as yf
 import datetime
-import pandas_datareader as pdr
+#import pandas_datareader as pdr
 from dateutil.relativedelta import relativedelta
 import plotly.express as px
 from scipy.stats import pearsonr
@@ -254,32 +254,32 @@ def register_dashapps(app):
     df_cashflow_compound_original['Capex Avergae of Operating'] = []
 
     # Buffett Indicator
-    end = datetime.datetime.now()
-    start = end - relativedelta(years=20)
-    gdp = pdr.get_data_fred('GDP', start, end)
-    wilshire = pdr.get_data_fred('WILL5000PR', start, end)
+#     end = datetime.datetime.now()
+#     start = end - relativedelta(years=20)
+#     gdp = pdr.get_data_fred('GDP', start, end)
+#     wilshire = pdr.get_data_fred('WILL5000PR', start, end)
 
-    combined = pd.concat([gdp, wilshire], axis=1)
-    gdp_dates = gdp.index.values
-    prev_date = 'NaN'
+#     combined = pd.concat([gdp, wilshire], axis=1)
+#     gdp_dates = gdp.index.values
+#     prev_date = 'NaN'
 
-    for date in gdp_dates:
-        if prev_date == 'NaN':
-            combined.loc[:date, 'GDP'] = gdp.loc[date, 'GDP']
-        else:
-            combined.loc[date, 'GDP'] = gdp.loc['GDP']
-        # combined.loc['GDP'] = gdp.loc[date, 'GDP']
+#     for date in gdp_dates:
+#         if prev_date == 'NaN':
+#             combined.loc[:date, 'GDP'] = gdp.loc[date, 'GDP']
+#         else:
+#             combined.loc[date, 'GDP'] = gdp.loc['GDP']
+#         # combined.loc['GDP'] = gdp.loc[date, 'GDP']
 
-    combined['Buffet_Indicator'] = combined.WILL5000PR / combined.GDP * 100
+#     combined['Buffet_Indicator'] = combined.WILL5000PR / combined.GDP * 100
 
     fig30 = make_subplots()
-    fig30.add_trace(go.Scatter(x=list(combined.index), y=list(combined['Buffet_Indicator']), name='Buffet'))
-    fig30.update_layout(legend=dict(x=0, y=1,
-                                    traceorder="normal",
-                                    font=dict(family="sans-serif", size=12, color="black"),
-                                    bgcolor="rgba(50, 50, 50, 0)", bordercolor="rgba(50, 50, 50, 0)", borderwidth=0))
-    fig30.update_layout(title={'text': "Buffett Indicator", 'y': 0.96, 'x': 0.5, 'xanchor': 'center', 'yanchor': 'top'})
-    fig30.update_layout(margin={'t': 25, 'b': 0, 'l': 0, 'r': 0})
+#     fig30.add_trace(go.Scatter(x=list(combined.index), y=list(combined['Buffet_Indicator']), name='Buffet'))
+#     fig30.update_layout(legend=dict(x=0, y=1,
+#                                     traceorder="normal",
+#                                     font=dict(family="sans-serif", size=12, color="black"),
+#                                     bgcolor="rgba(50, 50, 50, 0)", bordercolor="rgba(50, 50, 50, 0)", borderwidth=0))
+#     fig30.update_layout(title={'text': "Buffett Indicator", 'y': 0.96, 'x': 0.5, 'xanchor': 'center', 'yanchor': 'top'})
+#     fig30.update_layout(margin={'t': 25, 'b': 0, 'l': 0, 'r': 0})
 
     # PCA Kmeans preprocessing
     clustersignals = pd.DataFrame()
