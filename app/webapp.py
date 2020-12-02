@@ -54,14 +54,13 @@ def logout():
 
     #return redirect(url_for('main.index'))
     return redirect ('https://samis-project.herokuapp.com/index/')
-    #return redirect(url_for('main.index'))
 
 
 @server_bp.route('/register/', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('main.index'))
-        #return redirect('https://testsami999.herokuapp.com/dashboard/')
+        #return redirect(url_for('main.index'))
+        return redirect ('https://samis-project.herokuapp.com/index/')
 
     form = RegistrationForm()
     if form.validate_on_submit():
