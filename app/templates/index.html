@@ -7,7 +7,6 @@ Home page
 {% block styles %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename='starter-template.css')}}">
-<div style="background-image: {{url_for('static', filename='background.jpg')}}">
 {% endblock %}
 
 {% block content %}
@@ -30,7 +29,8 @@ Home page
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+    
+    <div style="background-image: {{url_for('static', filename='background.jpg')}}">
     <div class="container">
 
       <div class="starter-template">
