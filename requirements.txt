@@ -1,3 +1,4 @@
+gunicorn>=19.7.1
 alembic==1.2.0
 attrs==19.1.0
 Brotli==1.0.7
@@ -25,7 +26,6 @@ Flask-SeaSurf==0.2.2
 Flask-SQLAlchemy==2.4.0
 Flask-WTF==0.14.2
 future==0.18.2
-gunicorn==19.9.0
 html5lib==1.0.1
 idna==2.9
 ipython-genutils==0.2.0
