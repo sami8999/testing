@@ -20,8 +20,8 @@ server_bp = Blueprint('main', __name__)
 
 @server_bp.route('/')
 def index():
-    #return render_template("index.html", title='Home Page')
-    return redirect('https://samis-project.herokuapp.com/login/')
+    return render_template("index.html", title='Home Page')
+    #return redirect('https://samis-project.herokuapp.com/login/')
 
 
 @server_bp.route('/login/', methods=['GET', 'POST'])
