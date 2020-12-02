@@ -29,6 +29,7 @@ from flask_login import login_required
 from config import BaseConfig
 from flask_migrate import Migrate
 
+#https://www.youtube.com/watch?v=FKy21FnjKS0  15mins for heroku database setup
 def create_app():
     server = Flask(__name__)
     server.config.from_object(BaseConfig)
