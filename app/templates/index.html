@@ -8,6 +8,11 @@ Home page
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename='starter-template.css')}}">
 <body background="{{ url_for('static', filename='back.jpg') }}"> 
+<style>
+body {
+  color: #fcf8e3;
+}
+</style>
 {% endblock %}
 
 {% block content %}
