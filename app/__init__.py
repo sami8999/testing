@@ -28,14 +28,7 @@ from flask.helpers import get_root_path
 from flask_login import login_required
 from config import BaseConfig
 from flask_migrate import Migrate
-from urllib.parse import urlencode
-
-try:
-    sf.set_data_dir('~/simfin_data/')
-except OSError:
-    pass
-
-api_key = "ZxGEGRnaTpxMF0pbGQ3JLThgqY2HBL17"
+#from urllib.parse import urlencode
 
 def create_app():
     server = Flask(__name__)
@@ -49,6 +42,8 @@ def create_app():
 
 def register_dashapps(app):
     # income statement
+    sf.set_data_dir('~/simfin_data/')
+    api_key = "ZxGEGRnaTpxMF0pbGQ3JLThgqY2HBL17"
     df_income = sf.load(dataset='income', variant='annual', market='us', refresh_days=3, index=[TICKER])
     df_publish = df_income.copy()
     df_pe = pd.DataFrame()
